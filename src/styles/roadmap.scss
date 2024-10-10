@@ -1,0 +1,115 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.heading {
+  display: flex;
+  margin-left: 20px;
+
+  > h1 {
+    color: #FFA800;
+    font-family: Montserrat;
+    font-size: 4vw; // Responsive font size
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-right: 15px;
+  }
+
+  > p {
+    font-family: 'Montserrat';
+    font-size: 4vw; // Responsive font size
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+}
+
+.roadmap {
+  margin-top: 300px;
+  display: flex;
+  gap: 20px; // Gap between the roadmap cards
+  flex-wrap: wrap; // Allow items to wrap
+  margin-top: 20px; // Space above the roadmap
+  justify-content: space-evenly;
+
+  // Responsive design for smaller screens
+  @media (max-width: 768px) {
+    justify-content: center; // Center cards on smaller screens
+  }
+}
+
+// Common styling for the roadmap card
+.roadmap-card {
+  background-color: #fff; // Directly set the background color
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Directly set box shadow
+  overflow: hidden;
+  width: 250px; // Directly set card width
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+
+  // Responsive card width
+  @media (max-width: 768px) {
+    width: 90%; // Full width on smaller screens
+    max-width: 300px; // Max width for larger mobile devices
+  }
+
+  &:hover {
+    transform: translateY(-10px); // Directly set hover transform
+  }
+
+  // Nested styling for the content inside the roadmap card
+  .card-content {
+    padding: 20px;
+    color: #333; // Set a dark color for better contrast
+
+    h2 {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-family: 'Montserrat';
+      font-weight: 900;
+    }
+
+    p {
+      color: white;
+      font-size: 18px;
+      font-family: 'Montserrat';
+      font-weight: 900;
+    }
+  }
+
+  // Styling for the image container within the card
+  .card-image {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    padding: 10px;
+
+    img {
+      width: 100%;
+      height: auto; // Maintain aspect ratio
+    }
+  }
+}
+
+// Media Queries for Further Responsiveness
+@media (max-width: 480px) {
+  .heading {
+    > h1 {
+      font-size: 5vw; // Further adjust heading size for mobile
+    }
+    > p {
+      font-size: 5vw; // Further adjust paragraph size for mobile
+    }
+  }
+
+  .roadmap {
+    gap: 10px; // Reduce gap between cards on smaller screens
+  }
+
+  .roadmap-card {
+    width: 95%; // Adjust width for mobile devices
+    max-width: 100%; // Ensure it takes the full width
+  }
+}

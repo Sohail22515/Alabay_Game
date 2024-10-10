@@ -1,0 +1,170 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    //background-color: #FFC700;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure the body takes full height */
+    margin-right:0; /* Remove default body margin */
+
+}
+
+.image-container img {
+    width: 200px; /* Adjust the image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.home2 {
+    width: 100vw;
+    height: 900px; /* Can adjust based on design */
+    transform: rotate(0deg);
+    flex-shrink: 0;
+    display: flex; /* Added to allow flex properties */
+    flex-direction: row; /* Aligns items in a row */
+    align-items: center; /* Vertically centers content */
+    justify-content: space-between; /* Ensures spacing between image and text */
+    //background: radial-gradient(circle at 50.14% 67.33%, #FFF280 0%, #FFC700 100%); /* Apply radial gradient here */
+    padding: 20px;
+    //clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Create a triangle */
+
+    > div {
+        display: flex;
+        width: 90%; /* Ensure full width in flex container */
+        
+        > div {
+            position: relative; /* To position images on top of each other */
+            height: auto; /* Allows container to adjust to the image height */
+            width: 50%; /* Half width for each side */
+            
+            .original-image {
+                width: 100%; /* Adjust size as necessary */
+                height: auto; /* Maintains aspect ratio */
+            }
+
+            .mirrored-image {
+                width: 100%; /* Adjust size as necessary */
+                height: auto; /* Maintains aspect ratio */
+                transform: scaleY(-1); /* Mirrors the image vertically */
+                position: absolute; /* Overlay the mirrored image on top */
+                top: 75%; /* Places it directly below the original image */
+                left: 0; /* Aligns with the left side of the original image */
+                opacity: 0.5; /* Optional: adjust opacity for visual effect */
+                z-index: -1; /* Places the mirrored image behind other elements */
+                pointer-events: none; /* Ensures it doesn't block any click events */
+                flex-shrink: 0;
+            }
+        }
+
+        > div {
+            width: 50%; /* Half width for text side */
+            
+            > h1 {
+                color: rgba(247, 105, 2, 0.82);
+                text-align: right;
+                font-family: Montserrat;
+                font-size: 6vw; /* Responsive font size */
+                font-weight: 900;
+                line-height: 104.73%; /* Can be adjusted based on your needs */
+                transform: rotate(-0deg);
+                margin-right: 2vw; /* Responsive margin */
+                
+                > span {
+                    display: block;
+                    color: #FFF;
+                    font-family: Cheeseburger;
+                    font-size: 15vw; /* Responsive font size */
+                    font-weight: 400;
+                    line-height: 116.997%;
+                }
+            }
+
+            > p {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                flex-shrink: 0;
+                text-align: right;
+                color: #353535;
+                font-size: 3vw; /* Responsive font size */
+                font-family: "Kumbh Sans";
+                font-weight: 700;
+                line-height: 104.73%; /* Adjust based on your needs */
+            }
+        }
+    }
+}
+
+.home2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50.14% 67.33%, #FFF280 0%, #FFC700 100%); /* Apply your gradient here */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 74%);
+    z-index: -1; /* Make sure the triangle is behind the content */
+}
+
+/* Media Queries for Additional Responsiveness */
+@media (max-width: 768px) {
+    .home2 {
+        height: auto; /* Allow height to adjust based on content */
+        
+        > div {
+            flex-direction: column; /* Stack images and text vertically */
+            align-items: center; /* Center items horizontally */
+            
+            > div {
+                width: 100%; /* Full width for smaller screens */
+                height: auto; /* Adjust height */
+                
+                .mirrored-image {
+                    display: none; /* Hide mirrored image on small screens */
+                }
+            }
+
+            > div {
+                width: 100%; /* Full width for text */
+                
+                > h1 {
+                    font-size: 8vw; /* Adjust font size for smaller screens */
+                    margin-right: 0; /* Remove right margin */
+                    text-align: center; /* Center text */
+                }
+                
+                > p {
+                    font-size: 4vw; /* Adjust font size for smaller screens */
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .home2 {
+        > div {
+            > div {
+                .mirrored-image {
+                    display: none; /* Ensure mirrored image remains hidden on smaller screens */
+                }
+            }
+
+            > div {
+                > h1 {
+                    font-size: 10vw; /* Further adjust font size for mobile */
+                }
+                
+                > p {
+                    font-size: 5vw; /* Further adjust font size for mobile */
+                }
+            }
+        }
+    }
+}

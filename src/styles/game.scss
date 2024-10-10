@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cheeseburger&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.game-container {
+    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Cheeseburger', cursive;
+
+  .gametitle {
+    font-size: 4rem;
+    color: #f4a42e;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size:100px;
+    font-weight: 400;
+    >p{
+        font-family: "Montserrat";
+        font-size: 50;
+    }
+  }
+
+  .game_carousel {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    
+    .game_carousel-background{
+        position: relative;
+        width: 100%;
+        padding-top: 50%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        .carousel-front {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); // This will perfectly center the front image
+          max-width: 600px; // Set the desired max-width for the front image
+          height: auto;
+          z-index: 2;
+        }
+      }
+
+    .game_carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+
+      .game_arrow {
+        background: white;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s;
+
+        &:hover {
+          background: #070706;
+          color: white;
+        }
+      }
+
+      .left-arrow {
+        margin-left: 10px;
+      }
+
+      .right-arrow {
+        margin-right: 10px;
+      }
+    }
+
+    .game_carousel-content {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      p {
+        color: #2A2027;;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .game_discover-button {
+        background: #000;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        border-radius: 100px;
+        background: #45D689;
+        box-shadow: 12px 11px 11.3px 0px rgba(0, 0, 0, 0.61);
+
+        &:hover {
+          background: #91f42e;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+.game-container::before {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50.14% 67.33%, #FFF280 0%, #FFC700 100%); /* Apply your gradient here */
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 79%);
+  z-index: -1; /* Make sure the triangle is behind the content */
+}
+

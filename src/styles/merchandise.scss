@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Cheeseburger&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Cheeseburger', cursive;
+
+  .title {
+    font-size: 6vw; // Responsive font size
+    color: #f4a42e;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .carousel {
+    position: relative;
+    width: 90%; // Set to 90% for better mobile handling
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    .carousel-background {
+      position: relative;
+      width: 100%;
+      padding-top: 50%; // Maintain aspect ratio
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .carousel-front {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 80%; // Responsive max-width
+        height: auto;
+        z-index: 2;
+      }
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+
+      .arrow {
+        background: white;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s;
+
+        &:hover {
+          background: #f4a42e;
+          color: white;
+        }
+      }
+
+      .left-arrow {
+        margin-left: 10px;
+      }
+
+      .right-arrow {
+        margin-right: 10px;
+      }
+    }
+
+    .carousel-content {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      p {
+        color: #2A2027;
+        font-size: 3vw; // Responsive font size
+        margin-bottom: 10px;
+      }
+
+      .discover-button {
+        background: #000;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 1.5rem; // Increase font size
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #f4a42e;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+/* Media Queries for Additional Responsiveness */
+@media (max-width: 768px) {
+  .carousel-container {
+    .title {
+      font-size: 5vw; // Adjust title font size for tablets
+    }
+
+    .carousel-content {
+      p {
+        font-size: 4vw; // Adjust paragraph font size for tablets
+      }
+
+      .discover-button {
+        font-size: 1.2rem; // Adjust button size for tablets
+      }
+    }
+
+    .carousel {
+      .carousel-front {
+        max-width: 90%; // Set max-width for images on smaller devices
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    .title {
+      font-size: 6vw; // Further adjust title font size for mobile
+    }
+
+    .carousel-content {
+      p {
+        font-size: 5vw; // Adjust paragraph font size for mobile
+      }
+
+      .discover-button {
+        font-size: 1rem; // Adjust button size for mobile
+      }
+    }
+
+    .carousel {
+      .carousel-front {
+        max-width: 100%; // Ensure images take full width on mobile
+      }
+    }
+  }
+}

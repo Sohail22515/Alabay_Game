@@ -1,0 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.imagebox {
+    display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the carousel */
+  align-items: center; /* Center images vertically */
+  padding: 20px; /* Add some padding around the box */
+  border: 2px solid #ccc; /* Border for the box */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px; /* Space around the box */
+}

@@ -1,0 +1,128 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.home5 {
+  margin-top: 2rem;
+
+  h1 {
+    margin-left: 5rem; // Adjust the margin as per your need
+    font-size: 6vw; // Responsive font size
+    color: #FFC700; // Customize color
+    font-family: "Cheeseburger", sans-serif;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap; // Allow wrapping on smaller screens
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column; // Make the data sections appear in a column
+    width: 100%; // Default to 100% for mobile
+    max-width: 600px; // Set max-width for larger screens
+    padding: 10px;
+    gap: 20px;
+
+    div {
+      display: flex;
+      flex-direction: column; // Makes each pair of p tags in a column
+      padding: 10px;
+      background-color: #353535; // Add background for visibility
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5); // Customize shadow as needed
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); // Darker shadow on hover
+      }
+
+      p {
+        padding-left: 5%; // Use percentage for responsive padding
+        text-align: left;
+        margin: 5px 0;
+        color: #555;
+        font-size: 4vw; // Responsive font size
+        font-weight: 900;
+        font-family: "Montserrat";
+
+        &:first-of-type {
+          font-size: 20px;
+          color: white; // First p tag - white color
+        }
+
+        &:nth-of-type(2) {
+          color: yellow; // Second p tag - yellow color
+        }
+      }
+    }
+  }
+
+  .image {
+    width: 100%; // Default to 100% for mobile
+    max-width: 600px; // Set max-width for larger screens
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    img {
+      max-width: 100%; // Ensure the image fits within its container
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+.home5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50.14% 67.33%, #FFF280 0%, #FFC700 100%); /* Apply your gradient here */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+  z-index: -1; /* Make sure the triangle is behind the content */
+}
+
+/* Media Queries for Additional Responsiveness */
+@media (min-width: 768px) {
+  .home5 > div {
+    flex-direction: row; // Align side by side on larger screens
+  }
+
+  .data {
+    width: 50%; // Set to 50% on larger screens
+  }
+
+  .image {
+    width: 50%; // Set to 50% on larger screens
+  }
+
+  h1 {
+    font-size: 4rem; // Adjust font size for larger screens
+    margin-left: 0; // Reset margin for alignment
+  }
+}
+
+@media (max-width: 480px) {
+  .home5 {
+    h1 {
+      font-size: 5vw; // Further adjust font size for mobile
+    }
+
+    .data {
+      width: 100%; // Full width on mobile
+    }
+
+    .image {
+      width: 100%; // Full width on mobile
+    }
+  }
+}

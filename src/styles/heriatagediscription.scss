@@ -1,0 +1,208 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/baron-kuffner');
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+
+* {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .game-description-page {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../Assets/Alabay Games/Alabay heritage prev gradient.png'); // Add your image path
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+  
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 80%;
+      padding: 20px;
+  
+      .main-heading {
+        font-family: "Baron Kuffner";
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+  
+      .sub-headings {
+        font-family: "Bebas Neue";
+        color: #90FFAE;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+  
+        .sub-heading {
+          font-size: 24px;
+          margin-bottom: 5px;
+          text-align: left;
+        }
+      }
+  
+      .description {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        text-align: left;
+  
+        .highlight {
+          color: #90FFAE;  // Highlight specific words with this color
+        }
+  
+        .special-word {
+          color: #90FFAE;  // Another color for special words
+        }
+      }
+  
+      .action-buttons {
+        display: flex;
+        gap: 20px;
+  
+        button {
+          padding: 10px 20px;
+          font-size: 18px;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+  
+          &:hover {
+            opacity: 0.9;
+          }
+  
+          &.play-button {
+            background-color: white;
+            color:black;
+  
+            .play-icon {
+              font-size: 20px;
+            }
+          }
+  
+          &.exit-button {
+            background-color:black;
+            color: white;
+            border: 2px solid white;
+          }
+        }
+      }
+    }
+  
+    // Responsive design
+    @media (max-width: 1200px) {
+      .content {
+        max-width: 90%;
+        .main-heading {
+          font-size: 42px;
+        }
+  
+        .sub-headings .sub-heading {
+          font-size: 22px;
+        }
+  
+        .description {
+          font-size: 16px;
+        }
+  
+        .action-buttons button {
+          font-size: 16px;
+          padding: 8px 18px;
+        }
+      }
+    }
+  
+    @media (max-width: 992px) {
+      .content {
+        max-width: 95%;
+        .main-heading {
+          font-size: 38px;
+        }
+  
+        .sub-headings .sub-heading{
+          font-size: 20px;
+        }
+  
+        .description {
+          font-size: 15px;
+        }
+  
+        .action-buttons button {
+          font-size: 15px;
+          padding: 7px 16px;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+  
+        .main-heading {
+          font-size: 34px;
+        }
+  
+        .sub-headings .sub-heading {
+          font-size: 18px;
+        }
+  
+        .description {
+          font-size: 14px;
+          text-align: center;
+        }
+  
+        .action-buttons {
+          justify-content: center;
+  
+          button {
+            font-size: 14px;
+            padding: 6px 14px;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .content {
+        .main-heading {
+          font-size: 28px;
+        }
+  
+        .sub-headings .sub-heading {
+          font-size: 16px;
+        }
+  
+        .description {
+          font-size: 12px;
+        }
+  
+        .action-buttons button {
+          font-size: 12px;
+          padding: 5px 12px;
+        }
+      }
+    }
+  }
+  

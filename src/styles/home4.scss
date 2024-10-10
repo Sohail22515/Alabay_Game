@@ -1,0 +1,115 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.home4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; 
+    text-align: center;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
+}
+
+.home4 h1 {
+    text-align: left;
+    width: 90%; 
+    margin-bottom: 40px; 
+    color: #FFA800;
+    font-family: "Cheeseburger", sans-serif;
+    font-size: 10vw; 
+    font-weight: 400;
+    line-height: normal;
+}
+
+.align {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start; 
+    gap: 20px; 
+    width: 100%; 
+    justify-content: space-between;
+    padding-top: 20px; /* Add gap between sections */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    max-width: 50%; 
+    text-align: left;
+    padding-left: 2%;
+    margin-top: 20px; /* Provide gap above the text */
+    box-sizing: border-box;
+}
+
+.text-container p {
+    margin: 0;
+    padding: 20px 0;
+    width: 100%; 
+    color: #353535;
+    font-family: "Kumbh Sans";
+    font-size: 4vw; 
+    font-weight: 700;
+    line-height: normal;
+}
+
+.text-container p > span {
+    margin-top: 5px; 
+    color: #FFA800;
+    font-family: "Kumbh Sans";
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 50%; 
+    height: 150%;
+    position: relative; /* Relative positioning to allow fine control */
+    //overflow: hidden; /* Hide overflow so container does not expand unnecessarily */
+}
+
+.image-container img.original-image {
+    width: 100%; 
+    height: auto;
+}
+
+.image-container img.mirrored-image {
+    width: 100%;
+    height: auto;
+    transform: scaleY(-1); 
+    position: absolute; /* Overlay the mirrored image on top */
+    top:90%; /* Places it directly below the original image */
+    left:0; /* Aligns with the left side of the original image */          
+    opacity: 0.5;
+    z-index: -1;  
+    //margin-top: -10px;
+    pointer-events: none;
+    flex-shrink: 0;
+    //clip-path: inset(40% 0 0 0); /* Reduce the height of the mirrored image */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .align {
+        flex-direction: column; 
+    }
+
+    .text-container, .image-container {
+        max-width: 100%; 
+    }
+
+    .text-container {
+        padding-left: 0;
+        margin-top: 0; /* Reset the margin for smaller screens */
+    }
+
+    .image-container img.mirrored-image {
+        display: none; /* Hide mirrored image on small screens */
+    }
+}

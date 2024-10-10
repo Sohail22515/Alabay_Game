@@ -1,0 +1,209 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/baron-kuffner');
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Added for consistent sizing */
+}
+
+.gurdian_game-description-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px; /* Add padding for smaller devices */
+  color: white;
+
+  /* Background Image */
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Assets/Alabay Games/Alabay Guard prev gradient.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  /* Content Styling */
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 80%;
+    padding: 20px;
+    z-index: 1;
+
+    .main-heading {
+      font-family: 'Baron Kuffner', sans-serif;
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-align: left;
+      word-wrap: break-word; /* For better readability */
+    }
+
+    .sub-headings {
+      font-family: 'Bebas Neue', sans-serif;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+
+      .sub-heading {
+        font-size: 24px;
+        margin-bottom: 5px;
+        text-align: left;
+      }
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      text-align: left;
+      word-wrap: break-word;
+
+      .highlight, .special-word {
+        color: #A4A8FF;
+      }
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: opacity 0.3s ease; /* Smoother hover effect */
+
+        &:hover {
+          opacity: 0.85;
+        }
+
+        &.play-button {
+          background-color: white;
+          color: black;
+
+          .play-icon {
+            font-size: 20px;
+          }
+        }
+
+        &.exit-button {
+          border: 2px solid white;
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .content {
+      max-width: 90%;
+
+      .main-heading {
+        font-size: 42px;
+      }
+
+      .sub-headings .sub-heading {
+        font-size: 22px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .action-buttons button {
+        font-size: 16px;
+        padding: 8px 18px;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .content {
+      max-width: 95%;
+
+      .main-heading {
+        font-size: 38px;
+      }
+
+      .sub-headings .sub-heading {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+
+      .action-buttons button {
+        font-size: 15px;
+        padding: 7px 16px;
+      }
+    }
+  }
+
+  @media (max-width: 768px){
+    .content {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+
+      .main-heading {
+        font-size: 34px;
+      }
+
+      .sub-headings .sub-heading {
+        font-size: 18px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .action-buttons {
+        justify-content: center;
+
+        button {
+          font-size: 14px;
+          padding: 6px 14px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .content {
+      .main-heading {
+        font-size: 28px;
+      }
+
+      .sub-headings .sub-heading {
+        font-size: 16px;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+
+      .action-buttons button {
+        font-size: 12px;
+        padding: 5px 12px;
+      }
+    }
+  }
+}

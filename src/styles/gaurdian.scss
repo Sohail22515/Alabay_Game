@@ -1,0 +1,119 @@
+@import url('https://fonts.cdnfonts.com/css/cheeseburger');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/baron-kuffner');
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+
+
+// App.scss
+
+// GamePage.scss
+.game-page {
+  height: 100vh;
+  background-image: url('../Assets/Alabay Games/alabay\ guard\ prev\ 2\ 1.png'); // Add your background image
+  background-size: cover;
+  background-position: center;
+
+  transition: transform 0.8s ease-in-out;
+
+  &.scrolling {
+    transform: translateY(-100%);
+  }
+
+  .content-section {
+    display: flex;
+    flex-direction: column;  // Stack items vertically
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    position: relative;
+    padding: 20px;
+
+    h1, h3, p {
+      
+      margin: 10px 0;  // Add some margin between elements for spacing
+      text-align: left;  // Center-align the text
+      color: white;
+    }
+
+    h1{
+      color: #FFF;
+      font-family: 'Baron Kuffner', sans-serif;
+      font-weight: 400px;
+      font-size: 80px;
+    }
+    h3{
+      color: #A4A8FF;
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400px;
+      font-size: 40px;
+                                                
+    }
+
+    p{
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .play-button-container {
+      margin-top: 20px;  // Add space between the text and the play button
+      .play-button {
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #5f77ff;
+        border: none;
+        border-radius: 50px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .game-cards {
+      display: flex;
+      gap: 20px;
+      position: absolute;  // Position the cards absolutely within the parent container
+      bottom: 0;  // Stick the cards to the bottom of the container
+      left: 0;  // Align the cards to the left
+      margin-bottom: 20px;  // Add some space from the bottom
+      justify-content: left;  // Align the cards to the left horizontally
+      flex-direction: row;
+    
+      .game-preview-heading {
+        justify-content: center;  // Center-align the heading within the container
+        margin-bottom: 200px;
+    
+        h2, p {
+          margin: 0 10px;
+          font-size: 24px;
+          color: white;  // Adjust color as needed
+        }
+        h2{
+          color: #A4A8FF;
+          font-family: 'Montserrat',sans-serif;
+        }
+      }
+    
+      .card {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 2px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    
+        &:hover {
+          transform: scale(1.05);  // Slight zoom effect on hover
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  // Stronger shadow effect
+        }
+      }
+    }
+    
+  }
+
+}
